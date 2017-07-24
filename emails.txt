@@ -1,0 +1,8 @@
+To: angelsilva_94@hotmail.com
+Subject: Verify your email
+Message: Click <a href="http://localhost:5000/api/Account?Id=952868f1-1a97-44b6-8cc9-111e4e27f24b&token=CfDJ8FHP7th8Bg1Hg4DSWwgddO1%2B92JqQWJHvFy3S2PoFk5LUhaw3qxel9NcHOAyw%2BDNBGpbdMMxlQB4WigWxiOjx%2BNhd6z0xSPB4u8c4Cpxg6ht0qJXeJwhpaWCgwfCjHukZFP90lrw2kQJ2eH2R00%2BJVYHif9A%2BOgvwyx9kNUuTjPqGqhn3FNU%2B4wfl3XEeWfsv5XD%2F%2FekuIlkQypYPtToUWHJjzEJw7rbGmOUHbLM0QK4v325u4%2B%2F5Wnkcch57lgW%2Bw%3D%3D">here</a> to verify your email
+
+To: angelsilva_924@hotmail.com
+Subject: Verify your email
+Message: Click <a href="http://localhost:5000/api/Account?Id=ce93550d-d27d-47df-a31e-dd4eab97350b&token=CfDJ8FHP7th8Bg1Hg4DSWwgddO3faih4K24aeHW2FiK4yTIBTy5r7HjBdVDQj0W3O2UQzw%2Brnr8sjWxJvIkTDRH%2FBapGSg%2F9GF6z4KfCGjffKfdxa0qOA%2BorHie8%2FS5%2FBgGfyfGObv0ySKL5bopOmqrY3Ro6bz2XKEzn%2B%2BTHmUnDx3mZslfO9lBjq5wT%2BvbxE9h9ksIWkviRGuCzwWX4Ku6%2FlwXCkYgLPECR3OFPr0GNHM%2Bgi0mo7hjKqi3Qdw%2FnOe9K2A%3D%3D">here</a> to verify your email
+

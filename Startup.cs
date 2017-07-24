@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ApiAuth.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using WebApiEFCore.Models;
 
 
 namespace WebApiEFCore {
@@ -27,8 +28,19 @@ namespace WebApiEFCore {
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices (IServiceCollection services) {
             // Add framework services.
-            var connection = @"Server=(localdb)\mssqllocaldb;Database=EFDB;Trusted_Connection=True;";
-            services.AddDbContext<DBContext> (options => options.UseSqlServer (connection));
+            var connection = @"Server=(localdb)\mssqllocaldb;Database=DBEF;Trusted_Connection=True;";
+            services.AddDbContext<IdentityDbContext> (options => options.UseSqlServer (connection,
+                optionsBuilder => optionsBuilder.MigrationsAssembly ("WebApiEFCore")));
+            services.AddIdentity<IdentityUser, IdentityRole> ()
+                .AddEntityFrameworkStores<IdentityDbContext> ()
+                .AddDefaultTokenProviders ();
+            services.Configure<IdentityOptions> (o => {
+                o.SignIn.RequireConfirmedEmail = true;
+            });
+            services.AddTransient<IMessageService, FileMessageService> ();
+
+            services.AddCors ();
+
             services.AddMvc ();
         }
 
@@ -36,7 +48,12 @@ namespace WebApiEFCore {
         public void Configure (IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory) {
             loggerFactory.AddConsole (Configuration.GetSection ("Logging"));
             loggerFactory.AddDebug ();
-
+            app.UseCors (b => b.WithOrigins ("http://dev.localhost.com:4000")
+                .AllowAnyOrigin ()
+                .AllowCredentials ()
+                .AllowAnyMethod ()
+                .AllowAnyHeader ());
+            app.UseIdentity ();
             app.UseMvc ();
         }
     }
