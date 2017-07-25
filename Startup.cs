@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-
+using WebApiAuth.Models;
 
 namespace WebApiEFCore {
     public class Startup {
@@ -29,11 +29,13 @@ namespace WebApiEFCore {
         public void ConfigureServices (IServiceCollection services) {
             // Add framework services.
             var connection = @"Server=(localdb)\mssqllocaldb;Database=DBEF;Trusted_Connection=True;";
-            services.AddDbContext<IdentityDbContext> (options => options.UseSqlServer (connection,
+            services.AddDbContext<DbContext> (options => options.UseSqlServer (connection,
                 optionsBuilder => optionsBuilder.MigrationsAssembly ("WebApiEFCore")));
-            services.AddIdentity<IdentityUser, IdentityRole> ()
-                .AddEntityFrameworkStores<IdentityDbContext> ()
+
+            services.AddIdentity<IdentityUser, IdentityRole<string>> ()
+                .AddEntityFrameworkStores<DbContext,string> ()
                 .AddDefaultTokenProviders ();
+
             services.Configure<IdentityOptions> (o => {
                 o.SignIn.RequireConfirmedEmail = true;
             });
@@ -48,7 +50,7 @@ namespace WebApiEFCore {
         public void Configure (IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory) {
             loggerFactory.AddConsole (Configuration.GetSection ("Logging"));
             loggerFactory.AddDebug ();
-            app.UseCors (b => b.WithOrigins ("http://dev.localhost.com:4000")
+            app.UseCors (b => b.WithOrigins ("http://localhost.com:4000")
                 .AllowAnyOrigin ()
                 .AllowCredentials ()
                 .AllowAnyMethod ()
