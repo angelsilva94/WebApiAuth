@@ -99,6 +99,7 @@ namespace ApiAuth.Controllers {
             if (string.IsNullOrWhiteSpace (email) || string.IsNullOrWhiteSpace (password)) {
                 return Json (new Response (HttpStatusCode.BadRequest) {
                     Message = "email or password is null"
+
                 });
             }
 
@@ -122,9 +123,8 @@ namespace ApiAuth.Controllers {
                 });
             }
 
-            return Json (new Response (HttpStatusCode.OK) {
-                Message = "Cookie created"
-            });
+            Response response = new Response (HttpStatusCode.OK) { Message = "Cookie created" };
+            return Json (response);
         }
 
         [HttpPost]
