@@ -7,6 +7,7 @@ using ApiAuth.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
+using WebApiAuth.Models;
 
 namespace ApiAuth.Controllers {
     [Route ("api/[controller]")]
@@ -26,8 +27,8 @@ namespace ApiAuth.Controllers {
             this._messageService = messageService;
         }
 
-        [HttpPost]
-        [Route ("register")]
+        [HttpPost("register")]
+        
         public async Task<JsonResult> Register (string email, string password, string confirmPassword) {
             if (string.IsNullOrWhiteSpace (email) || string.IsNullOrWhiteSpace (password)) {
                 return Json (new Response (HttpStatusCode.BadRequest) {
@@ -48,7 +49,7 @@ namespace ApiAuth.Controllers {
 
             IdentityResult userCreationResult = null;
             try {
-                userCreationResult = await _userManager.CreateAsync (newUser, password);
+                userCreationResult = await this._userManager.CreateAsync (newUser, password);
             } catch (SqlException) {
                 return Json (new Response (HttpStatusCode.InternalServerError) {
                     Message = "Error communicating with the database, see logs for more details"

@@ -29,11 +29,12 @@ namespace WebApiEFCore {
         public void ConfigureServices (IServiceCollection services) {
             // Add framework services.
             var connection = @"Server=(localdb)\mssqllocaldb;Database=DBEF;Trusted_Connection=True;";
-            services.AddDbContext<DbContext> (options => options.UseSqlServer (connection,
+
+            services.AddDbContext<DBContext> (options => options.UseSqlServer (connection,
                 optionsBuilder => optionsBuilder.MigrationsAssembly ("WebApiEFCore")));
 
-            services.AddIdentity<IdentityUser, IdentityRole<string>> ()
-                .AddEntityFrameworkStores<DbContext,string> ()
+            services.AddIdentity<Usuario, IdentityRole> ()
+                .AddEntityFrameworkStores<DBContext> ()
                 .AddDefaultTokenProviders ();
 
             services.Configure<IdentityOptions> (o => {

@@ -22,3 +22,11 @@ C:\Users\Angel Silva\Source\Repos\WebApiAuth\bin\Debug\netcoreapp1.1\WebApiEFCor
 C:\Users\Angel Silva\Source\Repos\WebApiAuth\obj\Debug\netcoreapp1.1\WebApiEFCore.AssemblyInfo.cs
 C:\Users\Angel Silva\Source\Repos\WebApiAuth\obj\Debug\netcoreapp1.1\WebApiEFCore.dll
 C:\Users\Angel Silva\Source\Repos\WebApiAuth\obj\Debug\netcoreapp1.1\WebApiEFCore.pdb
+C:\Users\angel.silva\Source\Repos\WebApiAuth\bin\Debug\netcoreapp1.1\WebApiEFCore.deps.json
+C:\Users\angel.silva\Source\Repos\WebApiAuth\bin\Debug\netcoreapp1.1\WebApiEFCore.runtimeconfig.json
+C:\Users\angel.silva\Source\Repos\WebApiAuth\bin\Debug\netcoreapp1.1\WebApiEFCore.runtimeconfig.dev.json
+C:\Users\angel.silva\Source\Repos\WebApiAuth\bin\Debug\netcoreapp1.1\WebApiEFCore.dll
+C:\Users\angel.silva\Source\Repos\WebApiAuth\bin\Debug\netcoreapp1.1\WebApiEFCore.pdb
+C:\Users\angel.silva\Source\Repos\WebApiAuth\obj\Debug\netcoreapp1.1\WebApiEFCore.AssemblyInfo.cs
+C:\Users\angel.silva\Source\Repos\WebApiAuth\obj\Debug\netcoreapp1.1\WebApiEFCore.dll
+C:\Users\angel.silva\Source\Repos\WebApiAuth\obj\Debug\netcoreapp1.1\WebApiEFCore.pdb
