@@ -39,6 +39,7 @@ namespace WebApiEFCore {
 
             services.Configure<IdentityOptions> (o => {
                 o.SignIn.RequireConfirmedEmail = true;
+                o.Cookies.ApplicationCookie.ExpireTimeSpan = TimeSpan.FromHours (2);
             });
             services.AddTransient<IMessageService, FileMessageService> ();
 
