@@ -1,4 +1,0 @@
-To: angelsilva_94@hotmail.com
-Subject: Verify your email
-Message: Click <a href="http://localhost:5000/api/Account?Id=d88b0c2d-25c5-4da9-ad05-45f69dec67ff&token=CfDJ8GHhdqjVG4VFudaQIw8154Dr0etB6DltBo379EgwRHQyLW8R18EOkAgm96k%2BzItdDlfYFvMUE4oO1PKlOPm2R5zLG5W%2FXofB4l53BSx%2Fckx3tluQY8cTgJ0yIdsyb9uUNrZ0StvHo4T63itys37%2BjRWLQKol7QKKYDjLprG%2F7eaMTJPr%2B3A%2B2%2BmRXZeCpT6nxNHTahVej8NtNfgfoOIPNLZ0yPWF2DvgC6yDmaeXu76T6wXRh9I1f%2BFp6yF41b0cRA%3D%3D">here</a> to verify your email
-

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using ApiAuth.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
@@ -29,7 +30,7 @@ namespace ApiAuth.Controllers {
             this._messageService = messageService;
         }
 
-        [HttpGet ("ping")]
+        [HttpGet ("ping"), Authorize (Roles = "ADMIN")]
         public IActionResult Ping () {
             return Ok (new { msg = "Everything is Ok" });
         }
