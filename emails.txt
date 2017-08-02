@@ -1,0 +1,4 @@
+To: otman.licona@softtek.com
+Subject: Verify your email
+Message: Click <a href="http://localhost:5000/api/Account?Id=f75b287e-8278-44bf-8040-b5297ed718a1&token=CfDJ8GHhdqjVG4VFudaQIw8154CxUzlcpcXYVNYJurc1%2FB%2B46OwzqhKQDAqv%2FtfX4LYLSvxs8oPRogHj1vtAxf3VhhatwUkdPg%2F3L3TBvOM6XYi0UUEA2P5HRUA7ugkcWZVfOr4Y8yHsKGGWkOu2F4aqg12KrLNVCl4FUp6E0N1W3y8lAywa2igsXaoBtW2IoRplEUCAcgKwQifAiuY6x90oPIZ6fn8GWv2qaPF%2Fg%2FzkhVwhiiTY%2FVGHt4O4V1MFOJAxJw%3D%3D">here</a> to verify your email
+

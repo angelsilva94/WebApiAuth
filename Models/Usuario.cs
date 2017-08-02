@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -12,6 +13,7 @@ namespace WebApiAuth.Models {
         public string FirstName { set; get; }
         public string LastName { set; get; }
         public DateTime BirthDate { set; get; }
+        public virtual IEnumerable<Story> UserStory { set; get; }
 
     }
 }

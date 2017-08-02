@@ -8,9 +8,10 @@ using WebApiAuth.Models;
 namespace WebApiEFCore.Migrations
 {
     [DbContext(typeof(DBContext))]
-    partial class DBContextModelSnapshot : ModelSnapshot
+    [Migration("20170802155845_relation")]
+    partial class relation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.2")
@@ -136,8 +137,6 @@ namespace WebApiEFCore.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UsuariosId");
-
                     b.ToTable("Stories");
                 });
 
@@ -185,6 +184,8 @@ namespace WebApiEFCore.Migrations
                     b.Property<string>("UserName")
                         .HasMaxLength(256);
 
+                    b.Property<int?>("UserStoryId");
+
                     b.HasKey("Id");
 
                     b.HasIndex("NormalizedEmail")
@@ -193,6 +194,8 @@ namespace WebApiEFCore.Migrations
                     b.HasIndex("NormalizedUserName")
                         .IsUnique()
                         .HasName("UserNameIndex");
+
+                    b.HasIndex("UserStoryId");
 
                     b.ToTable("AspNetUsers");
                 });
@@ -234,11 +237,11 @@ namespace WebApiEFCore.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("WebApiAuth.Models.Story", b =>
+            modelBuilder.Entity("WebApiAuth.Models.Usuario", b =>
                 {
-                    b.HasOne("WebApiAuth.Models.Usuario", "Usuarios")
-                        .WithMany("UserStory")
-                        .HasForeignKey("UsuariosId");
+                    b.HasOne("WebApiAuth.Models.Story", "UserStory")
+                        .WithMany("Usuarios")
+                        .HasForeignKey("UserStoryId");
                 });
         }
     }

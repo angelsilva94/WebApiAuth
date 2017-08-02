@@ -43,6 +43,8 @@ namespace WebApiEFCore {
             });
             services.AddTransient<IMessageService, FileMessageService> ();
 
+            services.AddTransient<IRolesService, RolesService> ();
+
             services.AddCors ();
 
             services.AddMvc ().AddJsonOptions (

@@ -35,7 +35,7 @@ namespace ApiAuth.Controllers {
             return Ok (new { msg = "Everything is Ok" });
         }
 
-        [HttpPost ("register")]
+        [HttpPost ("register"), AllowAnonymous]
         public async Task<JsonResult> Register ([FromBody] Register model) {
             if (string.IsNullOrWhiteSpace (model.Email) || string.IsNullOrWhiteSpace (model.Password)) {
                 return Json (new Response (HttpStatusCode.BadRequest));
